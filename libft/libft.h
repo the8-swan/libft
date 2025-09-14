@@ -1,6 +1,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 
 #ifndef LIBFT_H
@@ -36,6 +37,14 @@ char *ft_strrchr(const char *str, int ch);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 void *ft_memchr(const void *s, int c, size_t n);
 int ft_memcmp(const void *s1, const void *s2, size_t n);
+
+//memory allocation helpers 
+void *ft_calloc(size_t count, size_t size);
+
+
+
+int ft_atoi(const char *str);
+
 
 
 #endif

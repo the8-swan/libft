@@ -4,11 +4,11 @@
 
 
 int main(){
-    int a = ft_memcmp("hello", "he15", 3);
-    int b= memcmp("hello", "he15", 3);
+    // int a = ft_atoi("hello", "he15", 3);
+    // int b= memft_atoicmp("hello", "he15", 3);
     
-        printf("%d\n", a);
-        printf("%d\n",b);
+        printf("%p\n", ft_calloc(5,4));
+        printf("%p\n", calloc(5,4));
     
 
 }
