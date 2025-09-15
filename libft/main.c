@@ -4,11 +4,11 @@
 
 
 int main(){
-    // int a = ft_atoi("hello", "he15", 3);
-    // int b= memft_atoicmp("hello", "he15", 3);
-    
-        printf("%p\n", ft_calloc(5,4));
-        printf("%p\n", calloc(5,4));
-    
+    char* name= "oumaima";
+    char *lname=NULL;
+   char* ptr =ft_strjoin(name,lname);
+
+   printf("%s\n",ptr);
+
 
 }
