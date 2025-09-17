@@ -50,7 +50,8 @@ char *ft_strtrim(char const *s1, char const *set);
 //string split
 char **ft_split(char const *s, char c);
 
-
+//conversion functions
+char* ft_itoa(int n);
 
 
 int ft_atoi(const char *str);
