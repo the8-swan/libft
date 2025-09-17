@@ -1,50 +1,77 @@
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+// Helper function to print the result of ft_split
+void print_split(char **arr)
+{
+    int i = 0;
+    if (!arr)
+    {
+        printf("(null)\n");
+        return;
+    }
+    while (arr[i])
+    {
+        printf("'%s' ", arr[i]);
+        i++;
+    }
+    printf("[NULL]\n"); // show the terminator clearly
+}
 
 int main(void)
 {
-    char *result;
+    char **result;
 
+    // 1. Basic case
+    result = ft_split("hello world 42", ' ');
+    print_split(result);
+    // Expected: 'hello' 'world' '42' [NULL]
 
-    result = ft_strtrim("aaa", "a");
-    printf("'%s'\n", result);  // Expected: ''
-    free(result);
-    
+    // 2. Multiple delimiters in a row
+    result = ft_split("a,,b,,,c", ',');
+    print_split(result);
+    // Expected: 'a' 'b' 'c' [NULL]
 
+    // 3. Leading delimiters
+    result = ft_split("   spaced", ' ');
+    print_split(result);
+    // Expected: 'spaced' [NULL]
 
-    // 4. Trim only start
-    result = ft_strtrim("!!!wow", "!");
-    printf("'%s'\n", result);  // Expected: 'wow'
-    free(result);
+    // 4. Trailing delimiters
+    result = ft_split("end--", '-');
+    print_split(result);
+    // Expected: 'end' [NULL]
 
-    // 5. Trim only end
-    result = ft_strtrim("wow!!!", "!");
-    printf("'%s'\n", result);  // Expected: 'wow'
-    free(result);
+    // 5. Leading + trailing
+    result = ft_split("---middle---", '-');
+    print_split(result);
+    // Expected: 'middle' [NULL]
 
-    // 6. Trim start and end
-    result = ft_strtrim("!!wow!!", "!");
-    printf("'%s'\n", result);  // Expected: 'wow'
-    free(result);
+    // 6. Only delimiters
+    result = ft_split(";;;;;", ';');
+    print_split(result);
+    // Expected: [NULL] (empty array)
 
-  
-    // 8. NULL input
-    result = ft_strtrim(NULL, "a");
-    printf("%s\n", result ? result : "(null)");
-    // free(result); NULL, no need
-  
-    // 9. NULL set
-    result = ft_strtrim("hello", NULL);
-    printf("%s\n", result ? result : "(null)");
-    // free(result); NULL, no need
-  
-    // 10. Complex case (from your example)
-    result = ft_strtrim("abzzzab", "abc");
-    printf("'%s'\n", result);  // Expected: 'zzz'
-    free(result);
+    // 7. Empty string
+    result = ft_split("", ',');
+    print_split(result);
+    // Expected: [NULL]
 
-    result = ft_strtrim("abzzzabz", "abc");
-    printf("'%s'\n", result);  // Expected: 'zzzabz'
-    free(result);
+    // 8. No delimiter in string
+    result = ft_split("nodelem", ',');
+    print_split(result);
+    // Expected: 'nodelem' [NULL]
+
+    // 9. Null input
+    result = ft_split(NULL, ',');
+    print_split(result);
+    // Expected: (null)
+
+    // 10. Complex test (your earlier case)
+    result = ft_split("oumaimacbakric42cc", 'c');
+    print_split(result);
+    // Expected: 'oumaima' 'bakri' '42' [NULL]
 
     return 0;
 }
