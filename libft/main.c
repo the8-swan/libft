@@ -1,67 +1,63 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <ctype.h>
-#include "libft.h"   // your header with ft_strmapi prototype
+#include "libft.h"   // your header with ft_striteri prototype
 
 // === Callback functions for testing ===
 
-// Identity: returns the same char
-char identity(unsigned int i, char c) {
-    (void)i; // unused
-    return c;
+// Uppercase every character
+void to_upper(unsigned int i, char *c) {
+    (void)i; // index not used
+    *c = (char)toupper((unsigned char)*c);
 }
 
-// Shift character by index: c + i
-char shift_by_index(unsigned int i, char c) {
-    return c + i;
+// Add index to character
+void shift_by_index(unsigned int i, char *c) {
+    *c = *c + i;
 }
 
-// Uppercase only characters at even indices
-char uppercase_even(unsigned int i, char c) {
+// Replace even indices with '*'
+void star_even(unsigned int i, char *c) {
     if (i % 2 == 0)
-        return (char)toupper((unsigned char)c);
-    return c;
+        *c = '*';
 }
 
-// Replace every char with '*'
-char starify(unsigned int i, char c) {
+// Identity (does nothing)
+void identity(unsigned int i, char *c) {
     (void)i;
     (void)c;
-    return '*';
+    // no change
 }
 
 // === Main test program ===
 int main(void) {
-    char *result;
+    char str1[] = "hello";
+    char str2[] = "abc";
+    char str3[] = "libft";
+    char str4[] = "";
+    char str5[] = "test";
 
-    // Test 1: identity
-    result = ft_strmapi("abc", identity);
-    printf("Test 1: %s (expected: abc)\n", result);
-    free(result);
+    // Test 1: uppercase
+    ft_striteri(str1, to_upper);
+    printf("Test 1: %s (expected: HELLO)\n", str1);
 
     // Test 2: shift by index
-    result = ft_strmapi("abc", shift_by_index);
-    printf("Test 2: %s (expected: ace)\n", result);
-    free(result);
+    ft_striteri(str2, shift_by_index);
+    printf("Test 2: %s (expected: ace)\n", str2);
 
-    // Test 3: uppercase even indices
-    result = ft_strmapi("hello", uppercase_even);
-    printf("Test 3: %s (expected: HeLlO)\n", result);
-    free(result);
+    // Test 3: star even indices
+    ft_striteri(str3, star_even);
+    printf("Test 3: %s (expected: *i*f*)\n", str3);
 
     // Test 4: empty string
-    result = ft_strmapi("", starify);
-    printf("Test 4: \"%s\" (expected: \"\")\n", result);
-    free(result);
+    ft_striteri(str4, to_upper);
+    printf("Test 4: \"%s\" (expected: \"\")\n", str4);
 
-    // Test 5: starify
-    result = ft_strmapi("libft", starify);
-    printf("Test 5: %s (expected: ******)\n", result);
-    free(result);
+    // Test 5: identity
+    ft_striteri(str5, identity);
+    printf("Test 5: %s (expected: test)\n", str5);
 
     // Test 6: NULL input
-    result = ft_strmapi(NULL, identity);
-    printf("Test 6: %s (expected: (null))\n", result);
+    ft_striteri(NULL, to_upper); // should do nothing, no crash
 
     return 0;
 }
