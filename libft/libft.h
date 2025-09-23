@@ -52,9 +52,10 @@ char **ft_split(char const *s, char c);
 
 //conversion functions
 char* ft_itoa(int n);
-
-
 int ft_atoi(const char *str);
+
+//string iterators
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 
 

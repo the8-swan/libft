@@ -66,6 +66,8 @@ char **fill(char **ptr,char const *s, char c){
         return ptr;
 }
 
+
+
 char **ft_split(char const *s, char c){
         if (!s)
             return NULL;
