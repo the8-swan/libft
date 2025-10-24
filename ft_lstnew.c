@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:11:19 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/24 09:30:05 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/21 15:50:48 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/22 09:59:14 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_isalpha(int ch)
-{
-	if((ch >= 65 && ch<= 90)|| 
-		(ch >= 97&& ch <= 122))
-		return ch;
-	return (0);
+t_list *ft_lstnew(void *content){
+	t_list	*node;
+
+	node = malloc(sizeof(t_list));
+	if(!node)
+		return (NULL);
+	node -> content = content ;
+	node -> next = NULL;
+	return (node);
+
 }

@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:11:19 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/24 09:30:05 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/20 12:11:54 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/20 12:23:16 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_isalpha(int ch)
-{
-	if((ch >= 65 && ch<= 90)|| 
-		(ch >= 97&& ch <= 122))
-		return ch;
-	return (0);
+void ft_putendl_fd(char *s, int fd){
+	size_t	i;
+	i = 0;
+	if(s == NULL || fd < 0)
+		return;
+	while(s[i])
+	{
+		write(fd,&s[i],1);
+		i++;
+	}
+	write(fd,"\n",1);
 }

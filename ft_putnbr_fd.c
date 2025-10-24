@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:11:19 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/24 09:30:05 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/20 17:11:49 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/20 18:02:06 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
-
-int	ft_isalpha(int ch)
+void ft_putnbr_fd(int n, int fd)
 {
-	if((ch >= 65 && ch<= 90)|| 
-		(ch >= 97&& ch <= 122))
-		return ch;
-	return (0);
+	size_t	i;
+	char*	ptr;
+	size_t	size;
+	
+	i = 0;
+	size = 0;
+	if(fd < 0)
+		return;
+	ptr = ft_itoa(n);
+	size = ft_strlen(ptr);
+	write(fd,ptr,size);
+
 }

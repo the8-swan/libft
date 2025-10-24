@@ -6,13 +6,14 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/19 12:24:11 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/19 19:05:46 by obakri           ###   ########.fr       */
+/*   Updated: 2025/10/20 18:21:49 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void ft_putchar_fd(char c, int fd){
-	
+	if(fd < 0)
+		return;	
 	write(fd,&c,1);
 }
