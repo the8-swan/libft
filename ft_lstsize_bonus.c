@@ -1,15 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 18:59:14 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/15 18:59:29 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/25 18:24:24 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/25 18:28:34 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len){
+#include "libft.h"
 
+int	ft_lstsize(t_list *lst)
+{
+	int	size;
+
+	size = 0;
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		size += 1;
+		lst = lst ->next;
+	}
+	return (size);
 }

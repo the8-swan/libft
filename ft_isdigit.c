@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:19:15 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/24 09:42:54 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/24 09:42:39 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/24 09:58:52 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-int	ft_isdigit(int ch)
+
+int	ft_isdigit(int c)
 {
-	if(ch >= '0' && ch<='9')
-		return ch;
-	return 0;
-
+	if (c >= '0' && c <= '9')
+		return (c);
+	return (0);
 }
-

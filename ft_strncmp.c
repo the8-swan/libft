@@ -5,23 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 10:19:59 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/16 12:07:09 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/25 13:07:36 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/25 13:14:07 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while(i<n && s1[i] && s2[i])
+	while (i < n && s1[i] && s2[i])
 	{
-		if(s1[i] != s2[i])
+		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
 		i++;
 	}
-	return 0;
-
+	return (0);
 }

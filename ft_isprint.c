@@ -5,14 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 14:46:46 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/24 10:00:09 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/24 09:59:26 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/24 10:02:34 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int ch)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
-	if(ch>=32 && ch<=126)
-		return ch;
-	return 0;
+	if (c >= 32 && c <= 126)
+		return (ch);
+	return (0);
 }

@@ -5,15 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/19 12:24:11 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/20 18:21:49 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/25 17:54:57 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/25 17:59:58 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd){
-	if(fd < 0)
-		return;	
-	write(fd,&c,1);
+void	ft_putchar_fd(char c, int fd)
+{
+	if (fd < 0)
+		return ;
+	write(fd, &c, 1);
 }

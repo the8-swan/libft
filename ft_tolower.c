@@ -5,14 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 09:44:18 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/15 09:49:16 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/25 00:39:41 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/25 00:45:15 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_tolower(int ch){	
-	if(ch >=65 && ch <= 90)
-		return (ch + 32);
-	return (ch); 
+int	ft_tolower(int c)
+{
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }

@@ -5,18 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 15:00:50 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/14 15:13:43 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/24 21:16:48 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/24 21:21:38 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void *ft_memset(void *ptr, int value, size_t num)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while(i<num)
-		((unsigned char*)ptr)[i++]= (unsigned char) value;
-	return (ptr);
+	while (i < n)
+		((unsigned char *)s)[i++] = (unsigned char) c;
+	return (s);
 }

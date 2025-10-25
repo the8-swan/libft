@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 09:39:56 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/15 09:44:06 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/25 00:29:42 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/25 00:39:18 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_toupper(int ch)
+int	ft_toupper(int c)
 {
-	if(ch >=97 && ch <=122)
-		return (ch-32);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
 	return (ch);
-
 }

@@ -5,21 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 12:11:54 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/20 12:23:16 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/25 18:02:31 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/25 18:05:35 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd){
+void	ft_putendl_fd(char *s, int fd)
+{
 	size_t	i;
+
 	i = 0;
-	if(s == NULL || fd < 0)
-		return;
-	while(s[i])
+	if (s == NULL || fd < 0)
+		return ;
+	while (s[i])
 	{
-		write(fd,&s[i],1);
+		write(fd, &s[i], 1);
 		i++;
 	}
-	write(fd,"\n",1);
+	write(fd, "\n", 1);
 }

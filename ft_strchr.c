@@ -5,22 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 09:49:37 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/15 18:07:16 by obakri           ###   ########.fr       */
+/*   Created: 2025/10/25 00:45:25 by obakri            #+#    #+#             */
+/*   Updated: 2025/10/25 00:59:01 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strchr(const char *str, int ch)
+char	*ft_strchr(const char *str, int c)
 {
-	while(*str)
+	if (str)
 	{
-		if(*str == ch)
-			return ((char*) str);
-		if(*(str+1) == ch)
-			return ((char*) str+1);
-		str++;
+		while (*str)
+		{
+			if (*str == (char)c)
+				return ((char *) str);
+			if (*(str + 1) == (char)c)
+				return ((char *) str + 1);
+			str++;
+		}
 	}
 	return (NULL);
 }
-
