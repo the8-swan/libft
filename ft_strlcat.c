@@ -6,7 +6,7 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 00:13:54 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/25 00:29:25 by obakri           ###   ########.fr       */
+/*   Updated: 2025/10/27 23:09:12 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	lendst = ft_strlen(dst);
 	lensrc = ft_strlen(src);
-	if (lenstd >= lensrc)
+	if (lendst >= lensrc)
 		return (lensrc + dstsize);
 	i = 0;
 	j = lendst;
-	while (src[i] && (1 + i + dst) < dstsize)
-		dst[j + i] = src[i++];
+	while (src[i] && (1 + i + lendst) < dstsize)
+	{
+		dst[j + i] = src[i];
+		i++;
+	}
 	dst[j + i] = '\0';
 	return (lensrc + lendst);
 }

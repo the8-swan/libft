@@ -6,13 +6,13 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:34:33 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/25 17:44:51 by obakri           ###   ########.fr       */
+/*   Updated: 2025/10/27 23:18:22 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_calcdigits(long n, int *arr)
+static int	ft_calcdigits(long n, int *arr)
 {
 	int	digits;
 	int	i;
@@ -30,7 +30,7 @@ int	ft_calcdigits(long n, int *arr)
 	return (digits);
 }
 
-void	ft_allocate(char *ptr, int sign, int *arr, int digits)
+static void	ft_allocate(char *ptr, int sign, int *arr, int digits)
 {
 	int	i;
 

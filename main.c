@@ -6,17 +6,18 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 11:02:43 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/27 11:38:11 by obakri           ###   ########.fr       */
+/*   Updated: 2025/10/27 23:15:11 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <ctype.h>
-
+/*
 void freecontent(void* content){
     content = NULL;
 }
+*/
 void	*Mylower(void	*content)
 {
 	int	idx = 0;
@@ -47,14 +48,14 @@ int main(){
         current = current->next;
     }
 
-
+/*
     current = ft_lstmap(head ,Mylower, freecontent);
 	printf("******** after ft_lstmap*******\n");
     while(current){
         printf("%s\n",(char *)current->content);
         current = current->next;
     }
-
+*/
     return 0;
 }
 

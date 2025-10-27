@@ -6,13 +6,13 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:20:35 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/27 11:02:11 by obakri           ###   ########.fr       */
+/*   Updated: 2025/10/27 23:17:33 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strcount(char const *s, char c)
+static size_t	ft_strcount(char const *s, char c)
 {
 	size_t	counter;
 	size_t	i;
@@ -28,7 +28,7 @@ size_t	ft_strcount(char const *s, char c)
 	return (counter);
 }
 
-char	*ft_allocate(const char *s, char c, size_t index)
+static char	*ft_allocate(const char *s, char c, size_t index)
 {
 	char	*ptr;
 	size_t	counter;
@@ -47,7 +47,7 @@ char	*ft_allocate(const char *s, char c, size_t index)
 	return (ptr);
 }
 
-char	*ft_fill(const char *s, char c, size_t	*index)
+static char	*ft_fill(const char *s, char c, size_t	*index)
 {
 	char	*ptr;
 	size_t	i;

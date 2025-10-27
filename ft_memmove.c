@@ -6,7 +6,7 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 22:27:21 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/24 22:58:38 by obakri           ###   ########.fr       */
+/*   Updated: 2025/10/27 23:13:20 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		i = 0;
 		while (i < n)
-			((unsigned char *)dest)[i] = ((unsigned char *)src)[i++];
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
 	}
+	return (dest);
 }

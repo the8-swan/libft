@@ -6,13 +6,14 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 09:25:51 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/27 11:41:57 by obakri           ###   ########.fr       */
+/*   Updated: 2025/10/27 23:03:46 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
