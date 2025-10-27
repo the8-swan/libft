@@ -6,7 +6,7 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 18:30:48 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/25 18:33:24 by obakri           ###   ########.fr       */
+/*   Updated: 2025/10/27 11:44:25 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
-	node = ft_lstlast(*lst);
-	if (!node)
+	if (!*lst)
+	{
+		*lst = new;
 		return ;
+	}
+	node = ft_lstlast(*lst);
 	node -> next = new;
 }
