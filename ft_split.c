@@ -6,7 +6,7 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:20:35 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/27 23:17:33 by obakri           ###   ########.fr       */
+/*   Updated: 2025/10/29 20:23:59 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,21 @@ static char	*ft_fill(const char *s, char c, size_t	*index)
 	ptr[i] = '\0';
 	return (ptr);
 }
-static char	**ft_free(char **ptr, size_t i){
+
+static char	**ft_free(char **ptr, size_t i)
+{
 	size_t	j;
 
 	j = 0;
-	while(j<= i){
+	while (j <= i)
+	{
 		free(ptr[j]);
 		j++;
 	}
 	free(ptr);
 	return (NULL);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -96,11 +100,10 @@ char	**ft_split(char const *s, char c)
 	while (i < strings)
 	{
 		ptr[i] = ft_fill(s, c, &index);
-		if(!ptr[i])
-			return ft_free(ptr,i);
+		if (!ptr[i])
+			return (ft_free(ptr, i));
 		i++;
 	}
 	ptr[i] = NULL;
 	return (ptr);
 }
-

@@ -6,13 +6,10 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 13:16:55 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/25 13:23:43 by obakri           ###   ########.fr       */
+/*   Updated: 2025/10/29 20:19:53 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
- 
-//#include "libft.h"
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -29,4 +26,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
