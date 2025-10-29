@@ -66,7 +66,17 @@ static char	*ft_fill(const char *s, char c, size_t	*index)
 	ptr[i] = '\0';
 	return (ptr);
 }
+static char	**ft_free(char **ptr, size_t i){
+	size_t	j;
 
+	j = 0;
+	while(j<= i){
+		free(ptr[j]);
+		j++;
+	}
+	free(ptr);
+	return (NULL);
+}
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -86,8 +96,11 @@ char	**ft_split(char const *s, char c)
 	while (i < strings)
 	{
 		ptr[i] = ft_fill(s, c, &index);
+		if(!ptr[i])
+			return ft_free(ptr,i);
 		i++;
 	}
 	ptr[i] = NULL;
 	return (ptr);
 }
+
