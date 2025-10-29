@@ -12,21 +12,22 @@
 
 #include "libft.h"
 
-void	ft_trimstart(char const	*s1, char const	*set, size_t *start)
+size_t	ft_trimstart(char const	*s1, char const	*set, size_t start)
 {
 	size_t	iset;
 
 	iset = 0;
-	while (s1[*start] && set[iset])
+	while (s1[start] && set[iset])
 	{
-		if (s1[*start] == set[iset])
+		if (s1[start] == set[iset])
 		{
-			(*start)++;
+			(start)++;
 			iset = 0;
 		}
 		else
 			iset++;
 	}
+	return (start);
 }
 
 void	ft_trimend(char const *s1, char const *set, size_t *end, size_t start)
@@ -55,10 +56,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (s1 == NULL || set == NULL )
 		return (NULL);
-	start = 0;
-	end = ft_strlen(s1) - 1;
+	end = ft_strlen(s1) ;
 	i = 0;
-	ft_trimstart(s1, set, &start);
+	start = ft_trimstart(s1, set, 0);
 	ft_trimend(s1, set, &end, start);
 	ptr = malloc((end - start + 1) * sizeof(char));
 	if (!ptr)
@@ -68,3 +68,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ptr[i] = '\0';
 	return (ptr);
 }
+
