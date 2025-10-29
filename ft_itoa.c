@@ -19,7 +19,7 @@ static int	ft_calcdigits(long n, int *arr)
 
 	digits = 0;
 	i = 0;
-	while (n > 0)
+	while (n >= 0)
 	{
 		arr[i++] = n % 10;
 		n /= 10;

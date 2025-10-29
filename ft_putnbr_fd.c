@@ -14,13 +14,26 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*ptr;
-	size_t	size;
+	int		i;
+	char	digits[10];
+	long	number;
 
-	size = 0;
+	i = 0;
 	if (fd < 0)
 		return ;
-	ptr = ft_itoa(n);
-	size = ft_strlen(ptr);
-	write(fd, ptr, size);
+	number = n;
+	if (n < 0)
+	{
+		number = -number;
+		write(fd, "-", 1);
+	}
+	while (number >= 0)
+	{
+		digits[i++] = (number % 10) + '0';
+		number /= 10;
+		if (number == 0)
+			break;
+	}
+	while (i > 0)
+		write(fd, &digits[--i], 1);
 }

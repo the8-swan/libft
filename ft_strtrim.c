@@ -12,41 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_trimstart(char const	*s1, char const	*set, size_t start)
-{
-	size_t	iset;
-
-	iset = 0;
-	while (s1[start] && set[iset])
-	{
-		if (s1[start] == set[iset])
-		{
-			(start)++;
-			iset = 0;
-		}
-		else
-			iset++;
-	}
-	return (start);
-}
-
-void	ft_trimend(char const *s1, char const *set, size_t *end, size_t start)
-{
-	size_t	iset;
-
-	iset = 0;
-	while (*end > start && set[iset])
-	{
-		if (s1[*end] == set[iset])
-		{
-			(*end)--;
-			iset = 0;
-		}
-		else
-			iset++;
-	}
-}
-
+ 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
@@ -56,15 +22,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (s1 == NULL || set == NULL )
 		return (NULL);
-	end = ft_strlen(s1) ;
-	i = 0;
-	start = ft_trimstart(s1, set, 0);
-	ft_trimend(s1, set, &end, start);
-	ptr = malloc((end - start + 1) * sizeof(char));
-	if (!ptr)
-		return (NULL);
-	while (start <= end)
-		ptr[i++] = s1[start++];
+	start =0;
+	i =0;
+	end = ft_strlen(s1);
+	while(s1[start] && ft_strchr(set,s1[start]))
+		start++;
+	while(end > start && ft_strchr(set,s1[end-1]))
+		end--;
+	if(start > end)
+		return ft_strdup(" ");
+	ptr = malloc( end -start +1);
+	if(!ptr)
+		return NULL;
+	while(start <end )
+			ptr[i++] = s1[start++];
 	ptr[i] = '\0';
 	return (ptr);
 }
