@@ -1,9 +1,6 @@
-# Variables
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rc
-RM = rm -f
 
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
       ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_toupper.c ft_tolower.c \
@@ -13,30 +10,29 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen
        ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c 
 
 
-SOURCES_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
+SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
                 ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
                 ft_lstmap_bonus.c
 
-OBJ = $(SRC:.c=.o)
-BONUS_OBJECTS = $(SOURCES_BONUS:.c=.o)
+SRC_OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
+SRC_BONUS_OBJ =$(SRC_BONUS:.c = .o)
 
-$(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
+all : $(NAME)
 
-bonus: $(BONUS_OBJECTS)
-	$(AR) $(NAME) $(BONUS_OBJECTS)
+$(NAME) : $(SRC_OBJ)
+	ar rc $(NAME) $(SRC_OBJ)
+bonus : $(SRC_BONUS_OBJ)
+	ar rc $(NAME) $(SRC_BONUS_OBJ)
 
-%.o: %.c libft.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
+%.o : %.c 
+	$(CC) -c $(CFLAGS) $< -o $@
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJECTS)
+	rm -f *.o
 
-fclean: clean
-	$(RM) $(NAME)
+fclean :clean
+	rm -f *.o $(NAME)
+re: 
+	fclean all
 
-re: fclean all
-
-.PHONY: clean
+.PHONY: all clean fclean 
