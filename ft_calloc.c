@@ -6,7 +6,7 @@
 /*   By: obakri <obakri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 13:55:14 by obakri            #+#    #+#             */
-/*   Updated: 2025/10/25 13:57:47 by obakri           ###   ########.fr       */
+/*   Updated: 2025/10/30 18:54:41 by obakri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@ void	*ft_calloc(size_t num, size_t size)
 	unsigned char	*ptr;
 
 	i = 0;
-	if (num == 0 || size == 0)
-	{
-		ptr = malloc(1);
-		if (!ptr)
-			return (NULL);
-		return (ptr);
-	}
 	ptr = malloc(num * size);
 	if (!ptr)
 		return (NULL);

@@ -16,23 +16,23 @@ SRC_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstl
 
 SRC_OBJ = $(SRC:.c=.o)
 
-SRC_BONUS_OBJ =$(SRC_BONUS:.c = .o)
+SRC_BONUS_OBJ =$(SRC_BONUS:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(SRC_OBJ)
-	ar rc $(NAME) $(SRC_OBJ)
+	ar rcs $(NAME) $(SRC_OBJ)
+
 bonus : $(SRC_BONUS_OBJ)
-	ar rc $(NAME) $(SRC_BONUS_OBJ)
+	ar rcs $(NAME) $(SRC_BONUS_OBJ)
 
 %.o : %.c 
 	$(CC) -c $(CFLAGS) $< -o $@
 clean:
-	rm -f *.o
+	rm -f $(SRC_OBJ) $(SRC_BONUS_OBJ)
 
 fclean :clean
-	rm -f *.o $(NAME)
-re: 
-	fclean all
+	rm -f $(NAME)
+re : fclean all
 
-.PHONY: all clean fclean 
+.PHONY: all clean fclean re
